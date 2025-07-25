@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CVTounsi.tn - Créateur de CV Professionnel Moderne</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Enhanced Header with Modern Navigation -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-file-alt"></i>
+                </div>
+                <div class="logo-text">
+                    <h1>CVTounsi<span class="accent">.tn</span></h1>
+                    <p>Créateur de CV Professionnel</p>
+                </div>
+            </div>
+            <nav class="nav">
+                <a href="#home" class="nav-link active">
+                    <i class="fas fa-home"></i>
+                    <span>Accueil</span>
+                </a>
+                <div class="nav-dropdown">
+                    <a href="#templates" class="nav-link dropdown-trigger">
+                        <i class="fas fa-palette"></i>
+                        <span>Templates</span>
+                        <i class="fas fa-chevron-down dropdown-arrow"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-header">
+                            <h4>Choisissez votre style</h4>
+                            <p>5 templates professionnels</p>
+                        </div>
+                        <div class="template-previews">
+                            <div class="template-preview-item" data-template="modern">
+                                <div class="preview-thumbnail modern-thumb"></div>
+                                <div class="preview-info">
+                                    <h5>Moderne</h5>
+                                    <p>Design épuré et contemporain</p>
+                                </div>
+                            </div>
+                            <div class="template-preview-item" data-template="creative">
+                                <div class="preview-thumbnail creative-thumb"></div>
+                                <div class="preview-info">
+                                    <h5>Créatif</h5>
+                                    <p>Style artistique et coloré</p>
+                                </div>
+                            </div>
+                            <div class="template-preview-item" data-template="professional">
+                                <div class="preview-thumbnail professional-thumb"></div>
+                                <div class="preview-info">
+                                    <h5>Professionnel</h5>
+                                    <p>Classique et élégant</p>
+                                </div>
+                            </div>
+                            <div class="template-preview-item" data-template="minimalist">
+                                <div class="preview-thumbnail minimalist-thumb"></div>
+                                <div class="preview-info">
+                                    <h5>Minimaliste</h5>
+                                    <p>Simple et efficace</p>
+                                </div>
+                            </div>
+                            <div class="template-preview-item" data-template="executive">
+                                <div class="preview-thumbnail executive-thumb"></div>
+                                <div class="preview-info">
+                                    <h5>Exécutif</h5>
+                                    <p>Luxueux et sophistiqué</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="#about" class="nav-link">
+                    <i class="fas fa-info-circle"></i>
+                    <span>À propos</span>
+                </a>
+                <a href="#contact" class="nav-link">
+                    <i class="fas fa-envelope"></i>
+                    <span>Contact</span>
+                </a>
+            </nav>
+            <div class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Enhanced Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <div class="hero-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <div class="shape shape-3"></div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h2>Créez votre <span class="gradient-text">CV parfait</span> en quelques minutes</h2>
+                    <p>Plateforme tunisienne moderne pour créer des CV professionnels. Choisissez parmi 5 templates uniques, ajoutez votre photo et téléchargez votre CV en PDF.</p>
+                    <div class="hero-features">
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>5 Templates uniques</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Upload de photo</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Export PDF gratuit</span>
+                        </div>
+                    </div>
+                    <div class="hero-buttons">
+                        <button class="btn-primary btn-large" onclick="startCreation()">
+                            <i class="fas fa-rocket"></i>
+                            <span>Créer mon CV</span>
+                        </button>
+                        <button class="btn-secondary btn-large" onclick="showTemplates()">
+                            <i class="fas fa-eye"></i>
+                            <span>Voir les templates</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="cv-mockup">
+                        <div class="mockup-screen">
+                            <div class="mockup-header"></div>
+                            <div class="mockup-content">
+                                <div class="mockup-line long"></div>
+                                <div class="mockup-line medium"></div>
+                                <div class="mockup-line short"></div>
+                                <div class="mockup-line long"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced CV Creation Form -->
+    <section id="cv-form" class="form-section" style="display: none;">
+        <div class="container">
+            <div class="form-header">
+                <h2><i class="fas fa-user-edit"></i> Créons votre CV professionnel</h2>
+                <p>Remplissez les informations étape par étape</p>
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div class="progress" id="progress"></div>
+                    </div>
+                    <div class="progress-steps">
+                        <div class="step-indicator active" data-step="1">
+                            <i class="fas fa-user"></i>
+                            <span>Personnel</span>
+                        </div>
+                        <div class="step-indicator" data-step="2">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>Formation</span>
+                        </div>
+                        <div class="step-indicator" data-step="3">
+                            <i class="fas fa-briefcase"></i>
+                            <span>Expérience</span>
+                        </div>
+                        <div class="step-indicator" data-step="4">
+                            <i class="fas fa-cogs"></i>
+                            <span>Compétences</span>
+                        </div>
+                        <div class="step-indicator" data-step="5">
+                            <i class="fas fa-camera"></i>
+                            <span>Photo</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <form id="cvForm" class="cv-form">
+                <!-- Step 1: Personal Information -->
+                <div class="form-step active" id="step1">
+                    <div class="step-header">
+                        <h3><i class="fas fa-user"></i> Informations personnelles</h3>
+                        <p>Commençons par vos informations de base</p>
+                    </div>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="firstName">Prénom *</label>
+                            <input type="text" id="firstName" name="firstName" required placeholder="Ex: Ahmed">
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Nom *</label>
+                            <input type="text" id="lastName" name="lastName" required placeholder="Ex: Ben Ali">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required placeholder="ahmed.benali@email.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Téléphone *</label>
+                            <input type="tel" id="phone" name="phone" required placeholder="+216 XX XXX XXX">
+                        </div>
+                        <div class="form-group">
+                            <label for="address">Adresse</label>
+                            <input type="text" id="address" name="address" placeholder="Rue, quartier">
+                        </div>
+                        <div class="form-group">
+                            <label for="city">Ville</label>
+                            <select id="city" name="city">
+                                <option value="">Sélectionnez votre ville</option>
+                                <option value="Tunis">Tunis</option>
+                                <option value="Sfax">Sfax</option>
+                                <option value="Sousse">Sousse</option>
+                                <option value="Kairouan">Kairouan</option>
+                                <option value="Bizerte">Bizerte</option>
+                                <option value="Gabès">Gabès</option>
+                                <option value="Ariana">Ariana</option>
+                                <option value="Gafsa">Gafsa</option>
+                                <option value="Monastir">Monastir</option>
+                                <option value="Ben Arous">Ben Arous</option>
+                                <option value="Kasserine">Kasserine</option>
+                                <option value="Médenine">Médenine</option>
+                                <option value="Nabeul">Nabeul</option>
+                                <option value="Tataouine">Tataouine</option>
+                                <option value="Autre">Autre</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="profileType">Profil professionnel *</label>
+                            <select id="profileType" name="profileType" required>
+                                <option value="">Sélectionnez votre profil</option>
+                                <option value="etudiant">Étudiant</option>
+                                <option value="diplome-bac">Bachelier</option>
+                                <option value="diplome-bts">BTS/DUT</option>
+                                <option value="diplome-licence">Licence</option>
+                                <option value="diplome-master">Master</option>
+                                <option value="diplome-doctorat">Doctorat</option>
+                                <option value="diplome-ingenieur">Ingénieur</option>
+                                <option value="non-diplome">Sans diplôme</option>
+                                <option value="professionnel">Professionnel expérimenté</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="jobTitle">Titre professionnel</label>
+                            <input type="text" id="jobTitle" name="jobTitle" placeholder="Ex: Développeur Web, Marketing Manager">
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="objective">Objectif professionnel</label>
+                            <textarea id="objective" name="objective" rows="4" placeholder="Décrivez brièvement vos objectifs professionnels et ce que vous recherchez..."></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2: Education -->
+                <div class="form-step" id="step2">
+                    <div class="step-header">
+                        <h3><i class="fas fa-graduation-cap"></i> Formation et Éducation</h3>
+                        <p>Ajoutez vos diplômes et formations (du plus récent au plus ancien)</p>
+                    </div>
+                    <div id="educationContainer">
+                        <div class="education-item">
+                            <div class="item-header">
+                                <h4><i class="fas fa-graduation-cap"></i> Formation #1</h4>
+                            </div>
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label>Diplôme/Formation *</label>
+                                    <input type="text" name="education[0][degree]" placeholder="Ex: Master en Informatique" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Établissement *</label>
+                                    <input type="text" name="education[0][school]" placeholder="Ex: ENSI - École Nationale des Sciences de l'Informatique" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Spécialisation</label>
+                                    <input type="text" name="education[0][specialization]" placeholder="Ex: Génie Logiciel">
+                                </div>
+                                <div class="form-group">
+                                    <label>Mention</label>
+                                    <select name="education[0][grade]">
+                                        <option value="">Sélectionnez</option>
+                                        <option value="Très Bien">Très Bien</option>
+                                        <option value="Bien">Bien</option>
+                                        <option value="Assez Bien">Assez Bien</option>
+                                        <option value="Passable">Passable</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Année de début</label>
+                                    <input type="number" name="education[0][startYear]" min="1990" max="2030" placeholder="2020">
+                                </div>
+                                <div class="form-group">
+                                    <label>Année de fin</label>
+                                    <input type="number" name="education[0][endYear]" min="1990" max="2030" placeholder="2022">
+                                </div>
+                                <div class="form-group full-width">
+                                    <label>Description (optionnel)</label>
+                                    <textarea name="education[0][description]" rows="3" placeholder="Projets réalisés, cours pertinents, activités extra-scolaires..."></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" class="btn-add" onclick="addEducation()">
+                        <i class="fas fa-plus"></i> Ajouter une formation
+                    </button>
+                </div>
+
+                <!-- Step 3: Experience -->
+                <div class="form-step" id="step3">
+                    <div class="step-header">
+                        <h3><i class="fas fa-briefcase"></i> Expérience professionnelle</h3>
+                        <p>Ajoutez vos expériences (du plus récent au plus ancien)</p>
+                    </div>
+                    <div id="experienceContainer">
+                        <div class="experience-item">
+                            <div class="item-header">
+                                <h4><i class="fas fa-briefcase"></i> Expérience #1</h4>
+                            </div>
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label>Poste *</label>
+                                    <input type="text" name="experience[0][position]" placeholder="Ex: Développeur Full Stack" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Entreprise *</label>
+                                    <input type="text" name="experience[0][company]" placeholder="Ex: TechCorp Tunisia" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Secteur d'activité</label>
+                                    <input type="text" name="experience[0][industry]" placeholder="Ex: Technologies de l'information">
+                                </div>
+                                <div class="form-group">
+                                    <label>Lieu</label>
+                                    <input type="text" name="experience[0][location]" placeholder="Ex: Tunis, Tunisie">
+                                </div>
+                                <div class="form-group">
+                                    <label>Date de début</label>
+                                    <input type="month" name="experience[0][startDate]">
+                                </div>
+                                <div class="form-group">
+                                    <label>Date de fin</label>
+                                    <input type="month" name="experience[0][endDate]">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="experience[0][current]"> Poste actuel
+                                    </label>
+                                </div>
+                                <div class="form-group full-width">
+                                    <label>Description des tâches et réalisations</label>
+                                    <textarea name="experience[0][description]" rows="4" placeholder="• Développement d'applications web avec React et Node.js&#10;• Gestion d'équipe de 3 développeurs&#10;• Amélioration des performances de 40%"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" class="btn-add" onclick="addExperience()">
+                        <i class="fas fa-plus"></i> Ajouter une expérience
+                    </button>
+                </div>
+
+                <!-- Step 4: Skills -->
+                <div class="form-step" id="step4">
+                    <div class="step-header">
+                        <h3><i class="fas fa-cogs"></i> Compétences et Qualifications</h3>
+                        <p>Mettez en valeur vos compétences techniques et personnelles</p>
+                    </div>
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h4><i class="fas fa-code"></i> Compétences techniques</h4>
+                            <textarea id="technicalSkills" name="technicalSkills" rows="4" placeholder="Ex: JavaScript, Python, React, Node.js, MySQL, Git, Docker..."></textarea>
+                        </div>
+                        <div class="skill-category">
+                            <h4><i class="fas fa-language"></i> Langues</h4>
+                            <div class="language-inputs">
+                                <div class="language-item">
+                                    <input type="text" name="languages[0][name]" placeholder="Arabe" value="Arabe">
+                                    <select name="languages[0][level]">
+                                        <option value="Natif">Natif</option>
+                                        <option value="Courant">Courant</option>
+                                        <option value="Intermédiaire">Intermédiaire</option>
+                                        <option value="Débutant">Débutant</option>
+                                    </select>
+                                </div>
+                                <div class="language-item">
+                                    <input type="text" name="languages[1][name]" placeholder="Français" value="Français">
+                                    <select name="languages[1][level]">
+                                        <option value="Natif">Natif</option>
+                                        <option value="Courant" selected>Courant</option>
+                                        <option value="Intermédiaire">Intermédiaire</option>
+                                        <option value="Débutant">Débutant</option>
+                                    </select>
+                                </div>
+                                <div class="language-item">
+                                    <input type="text" name="languages[2][name]" placeholder="Anglais" value="Anglais">
+                                    <select name="languages[2][level]">
+                                        <option value="Natif">Natif</option>
+                                        <option value="Courant">Courant</option>
+                                        <option value="Intermédiaire" selected>Intermédiaire</option>
+                                        <option value="Débutant">Débutant</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <button type="button" class="btn-add-small" onclick="addLanguage()">
+                                <i class="fas fa-plus"></i> Ajouter une langue
+                            </button>
+                        </div>
+                        <div class="skill-category">
+                            <h4><i class="fas fa-users"></i> Compétences personnelles</h4>
+                            <textarea id="softSkills" name="softSkills" rows="3" placeholder="Ex: Leadership, Travail d'équipe, Communication, Gestion de projet, Créativité..."></textarea>
+                        </div>
+                        <div class="skill-category">
+                            <h4><i class="fas fa-certificate"></i> Certifications</h4>
+                            <textarea id="certifications" name="certifications" rows="3" placeholder="Ex: AWS Certified Developer, Google Analytics, TOEIC 850, PMP..."></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 5: Photo Upload -->
+                <div class="form-step" id="step5">
+                    <div class="step-header">
+                        <h3><i class="fas fa-camera"></i> Photo de profil</h3>
+                        <p>Ajoutez une photo professionnelle (optionnel)</p>
+                    </div>
+                    <div class="photo-upload-section">
+                        <div class="photo-upload-container">
+                            <div class="photo-preview" id="photoPreview">
+                                <div class="photo-placeholder">
+                                    <i class="fas fa-user"></i>
+                                    <p>Aucune photo</p>
+                                </div>
+                            </div>
+                            <div class="photo-upload-controls">
+                                <input type="file" id="photoInput" name="photo" accept="image/*" style="display: none;">
+                                <button type="button" class="btn-upload" onclick="document.getElementById('photoInput').click()">
+                                    <i class="fas fa-upload"></i>
+                                    Choisir une photo
+                                </button>
+                                <button type="button" class="btn-remove" onclick="removePhoto()" style="display: none;">
+                                    <i class="fas fa-trash"></i>
+                                    Supprimer
+                                </button>
+                            </div>
+                        </div>
+                        <div class="photo-guidelines">
+                            <h4><i class="fas fa-info-circle"></i> Conseils pour votre photo</h4>
+                            <ul>
+                                <li>Format recommandé : JPG ou PNG</li>
+                                <li>Taille maximale : 5 MB</li>
+                                <li>Photo récente et professionnelle</li>
+                                <li>Fond neutre de préférence</li>
+                                <li>Visage bien visible et souriant</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Enhanced Navigation -->
+                <div class="form-navigation">
+                    <button type="button" id="prevBtn" class="btn-nav btn-prev" onclick="changeStep(-1)" style="display: none;">
+                        <i class="fas fa-arrow-left"></i>
+                        <span>Précédent</span>
+                    </button>
+                    <div class="nav-center">
+                        <span class="step-counter">Étape <span id="currentStepNum">1</span> sur 5</span>
+                    </div>
+                    <button type="button" id="nextBtn" class="btn-nav btn-next" onclick="changeStep(1)">
+                        <span>Suivant</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                    <button type="button" id="generateBtn" class="btn-nav btn-generate" onclick="generateCVs()" style="display: none;">
+                        <i class="fas fa-magic"></i>
+                        <span>Générer mes CV</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Enhanced CV Templates Preview -->
+    <section id="cv-preview" class="preview-section" style="display: none;">
+        <div class="container">
+            <div class="preview-header">
+                <h2><i class="fas fa-palette"></i> Choisissez vos templates préférés</h2>
+                <p>Sélectionnez un ou plusieurs designs et téléchargez vos CV en PDF</p>
+            </div>
+            
+            <div class="templates-showcase">
+                <!-- Modern Template -->
+                <div class="template-card modern-card" data-template="modern">
+                    <div class="template-preview" id="modern-preview">
+                        <div class="template-badge">
+                            <i class="fas fa-star"></i>
+                            <span>Populaire</span>
+                        </div>
+                        <div class="preview-content">
+                            <h4>Template Moderne</h4>
+                            <p>Design épuré avec en-tête coloré et mise en page contemporaine</p>
+                        </div>
+                    </div>
+                    <div class="template-actions">
+                        <button class="btn-select" onclick="selectTemplate('modern')">
+                            <i class="fas fa-check"></i> Sélectionner
+                        </button>
+                        <button class="btn-download" onclick="downloadCV('modern')" disabled>
+                            <i class="fas fa-download"></i> Télécharger PDF
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Creative Template -->
+                <div class="template-card creative-card" data-template="creative">
+                    <div class="template-preview" id="creative-preview">
+                        <div class="template-badge creative-badge">
+                            <i class="fas fa-palette"></i>
+                            <span>Créatif</span>
+                        </div>
+                        <div class="preview-content">
+                            <h4>Template Créatif</h4>
+                            <p>Style artistique avec couleurs vives et design original</p>
+                        </div>
+                    </div>
+                    <div class="template-actions">
+                        <button class="btn-select" onclick="selectTemplate('creative')">
+                            <i class="fas fa-check"></i> Sélectionner
+                        </button>
+                        <button class="btn-download" onclick="downloadCV('creative')" disabled>
+                            <i class="fas fa-download"></i> Télécharger PDF
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Professional Template -->
+                <div class="template-card professional-card" data-template="professional">
+                    <div class="template-preview" id="professional-preview">
+                        <div class="template-badge professional-badge">
+                            <i class="fas fa-briefcase"></i>
+                            <span>Pro</span>
+                        </div>
+                        <div class="preview-content">
+                            <h4>Template Professionnel</h4>
+                            <p>Style classique et élégant pour secteurs traditionnels</p>
+                        </div>
+                    </div>
+                    <div class="template-actions">
+                        <button class="btn-select" onclick="selectTemplate('professional')">
+                            <i class="fas fa-check"></i> Sélectionner
+                        </button>
+                        <button class="btn-download" onclick="downloadCV('professional')" disabled>
+                            <i class="fas fa-download"></i> Télécharger PDF
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Minimalist Template -->
+                <div class="template-card minimalist-card" data-template="minimalist">
+                    <div class="template-preview" id="minimalist-preview">
+                        <div class="template-badge minimalist-badge">
+                            <i class="fas fa-minus"></i>
+                            <span>Simple</span>
+                        </div>
+                        <div class="preview-content">
+                            <h4>Template Minimaliste</h4>
+                            <p>Design épuré et simple, focus sur le contenu</p>
+                        </div>
+                    </div>
+                    <div class="template-actions">
+                        <button class="btn-select" onclick="selectTemplate('minimalist')">
+                            <i class="fas fa-check"></i> Sélectionner
+                        </button>
+                        <button class="btn-download" onclick="downloadCV('minimalist')" disabled>
+                            <i class="fas fa-download"></i> Télécharger PDF
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Executive Template -->
+                <div class="template-card executive-card" data-template="executive">
+                    <div class="template-preview" id="executive-preview">
+                        <div class="template-badge executive-badge">
+                            <i class="fas fa-crown"></i>
+                            <span>Premium</span>
+                        </div>
+                        <div class="preview-content">
+                            <h4>Template Exécutif</h4>
+                            <p>Design luxueux et sophistiqué pour postes de direction</p>
+                        </div>
+                    </div>
+                    <div class="template-actions">
+                        <button class="btn-select" onclick="selectTemplate('executive')">
+                            <i class="fas fa-check"></i> Sélectionner
+                        </button>
+                        <button class="btn-download" onclick="downloadCV('executive')" disabled>
+                            <i class="fas fa-download"></i> Télécharger PDF
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="preview-actions">
+                <button class="btn-secondary btn-large" onclick="goBackToForm()">
+                    <i class="fas fa-edit"></i>
+                    <span>Modifier les informations</span>
+                </button>
+                <button class="btn-primary btn-large" onclick="downloadAllSelected()">
+                    <i class="fas fa-download"></i>
+                    <span>Télécharger tous les CV sélectionnés</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced Footer -->
+    <footer class="footer">
+        <div class="footer-background">
+            <div class="footer-shapes">
+                <div class="footer-shape footer-shape-1"></div>
+                <div class="footer-shape footer-shape-2"></div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <h3>CVTounsi<span class="accent">.tn</span></h3>
+                        <p>Votre partenaire pour créer des CV professionnels adaptés au marché tunisien.</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">Création de CV</a></li>
+                        <li><a href="#">Templates professionnels</a></li>
+                        <li><a href="#">Export PDF gratuit</a></li>
+                        <li><a href="#">Conseils carrière</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Centre d'aide</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Tutoriels</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <div class="contact-info">
+                        <p><i class="fas fa-envelope"></i> contact@cvtounsi.tn</p>
+                        <p><i class="fas fa-phone"></i> +216 XX XXX XXX</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Tunis, Tunisie</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 CVTounsi.tn - Tous droits réservés | Fait avec ❤️ en Tunisie</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
